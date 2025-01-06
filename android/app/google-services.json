@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364803740118",
+    "project_id": "jokes-project-lab",
+    "storage_bucket": "jokes-project-lab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364803740118:android:7605c2ffb87b2f7a5b9477",
+        "android_client_info": {
+          "package_name": "jokes.finki.ukim.mk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDycnTvBSmKul0ScARJAbDQOfQOI54UZ1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
