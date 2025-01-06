@@ -10,5 +10,5 @@ A basic Flutter project for a Joke viewing app, fully utilizing API calls. This 
 ## Prerequisites:
 Before you begin, ensure you have the following installed on your machine:
 
-- **Flutter**: 
-- - **Dart**: 
+- **Flutter**
+- **Dart** 
