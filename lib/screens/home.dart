@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lab2_213094/screens/random_joke.dart';
 import 'package:lab2_213094/screens/favorites.dart';
 import 'package:lab2_213094/services/api_services.dart';
+import 'package:lab2_213094/widgets/auth/logout_widget.dart';
 
 import '../widgets/joke_type_grid.dart';
 import '../models/joke.dart';
@@ -99,8 +100,18 @@ class _HomeState extends State<Home> {
       ),
       body: jokeTypes.isEmpty
           ? const Center(child: CircularProgressIndicator())
-          : JokeTypeGrid(
-        jokeTypes: jokeTypes,
+          : Column(
+        children: [
+          Expanded(
+            child: JokeTypeGrid(
+              jokeTypes: jokeTypes,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: LogoutWidget(context),
+          ),
+        ],
       ),
     );
   }

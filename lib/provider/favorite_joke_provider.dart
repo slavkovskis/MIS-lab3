@@ -7,6 +7,7 @@ class FavoriteJokeProvider with ChangeNotifier {
 
   List<Joke> get favoriteJokes => _favoriteJokes;
 
+
   void toggleFavorite(Joke joke) {
     if (_favoriteJokes.contains(joke)) {
       _favoriteJokes.remove(joke);

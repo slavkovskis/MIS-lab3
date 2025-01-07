@@ -1,11 +1,11 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:lab2_213094/provider/auth_provider.dart';
 import 'package:lab2_213094/provider/favorite_joke_provider.dart';
-import 'package:lab2_213094/screens/home.dart';
+import 'package:lab2_213094/screens/auth/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 
 Future<void> main() async {
@@ -13,7 +13,6 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   await messaging.requestPermission();
@@ -35,12 +34,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => FavoriteJokeProvider())
+          ChangeNotifierProvider(create: (_) => FavoriteJokeProvider()),
+          ChangeNotifierProvider(create: (_) => FirebaseAuthProvider()),
         ],
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: '213094-Jokes',
-          home: Home(),
+          home: LoginScreen(),
+          // home: Home(),
         ),
       );
 }
